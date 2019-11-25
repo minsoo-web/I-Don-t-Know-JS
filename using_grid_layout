@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .wrapper{
+            width:700px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-auto-rows:minmax(100px, auto);
+        }
+        .box{
+            padding: 15px;
+            color : #fff;
+            font-weight: bold;
+            text-align: center;
+
+        }
+        .box1{
+            background-color: #3689ff;
+            grid-column : 1/4;
+        }
+        .box2{
+            background-color: #00cf12;
+            grid-row :2/4;
+        }
+        .box3{
+            background-color: #ff9019;
+            grid-column: 2/4;
+            grid-row:2/3;
+        }
+        .box4{
+            background-color: #ffd000;
+            grid-column:3/4;
+            grid-row : 3/4;
+
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box box1">box1<br>grid-column : 1/4<br>grid-row : 1/2</div>
+      <div class="box box2">
+          <div>box2</div>
+          <div>grid-column : 1/2</div>
+          <div>grid-row : 2/4</div>
+      </div>
+      <div class="box box3">
+          <div>box3</div>
+          <div>grid-column : 2/4</div>
+          <div>grid-row : 2/3</div>
+      </div>
+      <div class="box box4">
+          <div>box4</div>
+          <div>grid-column : 3/4</div>
+          <div>grid-row : 3/4</div>
+      </div>
+    </div>
+  </body>
+</html>
