@@ -1,0 +1,41 @@
+*{
+    margin : 0;
+    padding : 0;
+    font-family : sans-serif;
+    list-style:  none;
+    text-decoration: none;
+}
+.middle{
+    position : absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.menu{
+    width:300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.item{
+    border-top: 1px solid #2980b9;
+    overflow: hidden;
+}
+.btn{
+    display :block;
+    padding: 16px 20px;
+    background: #3498db ;
+    color : white;
+    position: relative;
+    
+}
+.btn:before{
+    content :"";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #3498db ;
+    left : 20px;
+    bottom: -7px;
+    transform: rotate(45deg);
+}
+
