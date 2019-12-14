@@ -2,8 +2,8 @@
     margin : 0;
     padding : 0;
     font-family : sans-serif;
-    list-style:  none;
-    text-decoration: none;
+    list-style:  none;      /* 리스트 초기화 */
+    text-decoration: none;  /* 링크 글꼴 초기화 */
 }
 .middle{
     position : absolute;
@@ -38,4 +38,41 @@
     bottom: -7px;
     transform: rotate(45deg);
 }
+.btn i{
+    margin-right: 10px;
+}
+.smenu{
+    background: #333;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height:0;
+}
+.smenu a{
+    display: block;
+    padding: 16px 26px;
+    color: white;
+    font-size: 14px;
+    margin :4px 0;
+    position: relative;
+}
+.smenu a:before{ /*파란색 바*/
+    content: ""; /*색깔만 넣을꺼니까*/
+    position: absolute;
+    width: 6px; /*가로길이 지정*/
+    height: 100%;
+    background: #3498db;
+    left: 0;
+    top:0;
+    transition: 0.3s;
+    opacity: 0;  /*투명하게 해줌*/
+}
+.smenu a:hover:before{
+    opacity: 1; /*마우스를 올리면 파란색 바의 투명도가 1이 됌*/
+}
+.item:target .smenu{
+    max-height: 10em;
+}
+
+
+
 
