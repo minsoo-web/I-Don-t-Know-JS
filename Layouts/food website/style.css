@@ -1,113 +1,108 @@
-div{
-    /* border: 1px solid black; */
+div {
+  border: 1px solid black;
+}
+body{
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+/* .clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+} */
 
-}
-a{
-    text-decoration: none;
-    color : black;
-}
-.clearfix::after{
-    content: "";
-    display: block;
-    clear: both;
-}
-
-ul{
-    list-style: none;
-    margin: 0;
-    margin-inline-start: 0;
-    padding-inline-start: 0;
+ul {
+  list-style: none;
+  margin: 0;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
 }
 /* nav */
-.nav{
-    position:static;
+.nav {
+  position: fixed;
+  width: 100%;
 }
-.nav-wrapper{
-    height: 100px;
-    box-sizing: border-box;
+.nav-wrapper {
+  height: 100px;
+  /* box-sizing: border-box; */
 }
 
-.nav-wrapper > h1{
-    float: left;
-    margin: auto 20px;
-    line-height: 100px;
+.nav-wrapper > h1 {
+  float: left;
+  margin: auto 20px;
+  line-height: 100px;
 }
-.nav-wrapper > ul{
-    float: right;
-    line-height: 100px;
+.nav-wrapper > ul {
+  float: right;
+  line-height: 100px;
 }
 .nav-wrapper > ul > li {
-    padding: 0 10px;
-    float: right;
+  padding: 0 10px;
+  float: right;
 }
 
 /* header */
 
-.header > .img-wrapper{
-    height: 700px;
-    box-sizing: border-box;
+.header > .img-wrapper {
+  height: 700px;
+  box-sizing: border-box;
 }
 .img-wrapper > a > img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /* content */
-.content{
-    width: 1350px;
-    margin: auto;
-    box-sizing: border-box;
+.content {
+  display: flex;
+  /* border: 1px solid; */
+  box-sizing: border-box;
+  justify-content: center;
 }
 
-.gallery{
-    float: left;
-    display: flex;
-    flex-flow: row wrap;  
-    width: 750px;  
-    box-sizing: border-box;
-    margin-top: 20px;
+.gallery {
+  display: flex;
+  /* border: 1px solid; */
+  flex-grow: 2;
+  flex-basis: 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
-.card { 
-    display: inline-block;
-    /* width: 350px;
-    height: 250px; */
-    border: 0.5px solid gray;
-    margin-right: 20px;
-    margin-bottom: 20px;
+.card {
+  border: 1px solid;
+  flex-basis: 200px;
+  margin: 20px 20px 0 0;
+  padding: 5px;
 }
 
 .card > .img-wrapper {
-    width: 350px;
-    height: 400px;
+  width: 200px;
+  height: 200px;
 }
-
-.card > p {
-    text-align: center;
-}
-
 .aside {
-    float: right;
-    height: 500px;
-    width: 600px;
-    box-sizing: border-box;
-    margin-top: 20px;
+  flex-basis: 100px;
+  /* border: 1px solid; */
+  flex-grow: 1;
+  text-align: center;
 }
-
 .article-card {
-    border: 1px solid;
-    margin-bottom: 20px;
-    width: 200px;
-    text-align: center;
+  width: 200px;
+  padding: 10px;
+  margin: 20px auto 0 auto;
+  border: 0.5px solid lightslategray;
 }
-
-.article-card > .img-wrapper{
-    width: auto;
-    height: 200px;
+.article-card > .img-wrapper {
+  width: 200px;
+  height: 200px;
 }
 
 .article-card > p {
-    white-space: pre-line;
-    padding: 0 10px;
+  width: 200px;
+  margin: 20px auto 0 auto;
 }
-
