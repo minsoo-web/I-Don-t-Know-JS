@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+body {
+  background: #323232;
+}
+
+.gallery {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 470px;
+  height: 495px;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.gallery button {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 55px;
+  height: 55px;
+  background: #ffffff;
+  border-radius: 100%;
+  border: none;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.gallery.on button {
+  transform: rotate(45deg);
+}
+
+.gallery button:after {
+  content: "\e9c5";
+  font-family: "xeicon";
+  font-size: 25px;
+}
+.gallery div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 30px;
+  width: 70%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s 0.4s;
+}
+.gallery.on div {
+  opacity: 1;
+  z-index: 10;
+}
+.gallery:before,
+.gallery:after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  transform: scale(0);
+}
+.gallery:before {
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+}
+.gallery:after {
+  background: #fd3f01;
+  transition: all 0.5s 0.3s;
+}
+.hide {
+  display: none;
+}
+
+.gallery.on:before,
+.gallery.on:after {
+  transform: scale(25);
+}
