@@ -17,8 +17,8 @@ _[사진 출처](https://paperblock.tistory.com/67)_
 
 ## 👀 ES5 주요 특징들
 
-- ['use strict'](###use-strict)
-- [String.trim()](###string-trim)
+- ['use strict'](###-'use-strict')
+- [String.trim()](###-string.trim)
 - [Array.isArray()](###array.isarray)
 - [Array.forEach()](###array.foreach)
 - [Array.map()](###array.map)
