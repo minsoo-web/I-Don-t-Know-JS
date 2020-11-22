@@ -18,10 +18,10 @@ _[사진 출처](https://paperblock.tistory.com/67)_
 ## 👀 ES5 주요 특징들
 
 - [strict mode](#strict-mode)
-- [String.trim()](###-string.trim)
-- [Array.isArray()](###array.isarray)
-- [Array.forEach()](###array.foreach)
-- [Array.map()](###array.map)
+- [String.trim()](#stringtrim)
+- [Array.isArray()](#arrayisarray)
+- [Array.forEach()](#arrayforeach)
+- [Array.map()](#arraymap)
 - Array.filter()
 - Array.reduce()
 - Array.reduceRight()
@@ -33,7 +33,7 @@ _[사진 출처](https://paperblock.tistory.com/67)_
 - JSON.stringify()
 - Date.now()
 
-### strict mode
+### 'use strict'
 
 #### What is strict-mode
 
