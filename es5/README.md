@@ -1,6 +1,6 @@
 # ECMAScript 5
 
-![ES5](../images/es5/es5.png)
+![ES5](../images/es5/es5.png)  
 _[사진 출처](https://paperblock.tistory.com/67)_
 
 ![makrdown_badge](https://img.shields.io/badge/markdown%20lint-pass-blue)
@@ -17,11 +17,11 @@ _[사진 출처](https://paperblock.tistory.com/67)_
 
 ## 👀 ES5 주요 특징들
 
-- ['use strict'](#'use-strict')
-- [String.trim()](#string.trim)
-- [Array.isArray()](#array.isarray)
-- [Array.forEach()](#array.foreach)
-- [Array.map()](#array.map)
+- ['use strict'](###use-strict)
+- [String.trim()](###string-trim)
+- [Array.isArray()](###array.isarray)
+- [Array.forEach()](###array.foreach)
+- [Array.map()](###array.map)
 - Array.filter()
 - Array.reduce()
 - Array.reduceRight()
