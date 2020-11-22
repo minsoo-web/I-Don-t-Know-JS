@@ -37,8 +37,8 @@ _[사진 출처](https://paperblock.tistory.com/67)_
 
 #### What is strict-mode
 
-![엄근진짤](https://lh3.googleusercontent.com/proxy/ga9fE9k388frnrmYmrEBDEBq6coAfX07pNhmYMd-fnQngZx37FcEtDcmwwC0IypFlQec3OPG3lBQ-cJ57l3VWuZA9k5t4jE5-dsJqtfgqHYR1L1Ex5IN-C05_Hjr625gsotwX1RWMYmKX50ZkRnkmjHDcyqZFVoU-GlmzgZPiAhuNi4)
-**사진출처 싸감아저씨**
+![엄근진짤](https://lh3.googleusercontent.com/proxy/ga9fE9k388frnrmYmrEBDEBq6coAfX07pNhmYMd-fnQngZx37FcEtDcmwwC0IypFlQec3OPG3lBQ-cJ57l3VWuZA9k5t4jE5-dsJqtfgqHYR1L1Ex5IN-C05_Hjr625gsotwX1RWMYmKX50ZkRnkmjHDcyqZFVoU-GlmzgZPiAhuNi4)  
+_사진출처 싸감아저씨_
 
 말 그대로 엄격 모드입니다.  
 반대 표현으로는 '느슨한 모드(sloppy mode)' 라고 부르기도 합니다.
@@ -75,7 +75,7 @@ ES6 (ECMA2015)에 도입된 모듈에서는 엄격 모드 시작을 위한 구�
 
 #### 조용한 에러들
 
-> 엄격 모드와 비엄격 모드의 차이중 몇개를 뽑아서 정리했습니다.  
+> 엄격 모드와 비엄격 모드의 차이중 몇 개를 뽑아서 정리했습니다.  
 > 더 많은 특징들은 [MDN 공식 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Strict_mode) 에서 확인하시기 바랍니다.
 
 ##### 1. 선언하지 않은 variable, object를 사용/수정/삭제 할 수 없다
@@ -86,7 +86,7 @@ ES6 (ECMA2015)에 도입된 모듈에서는 엄격 모드 시작을 위한 구�
 // "use strict";
 
 이거_선언_되는_거였어 = 10;
-console.log(이거_선언_되는_거였어);
+console.log(이거_선언_되는_거였어); // 10
 ```
 
 엄격 모드
