@@ -17,7 +17,7 @@ _[사진 출처](https://paperblock.tistory.com/67)_
 
 ## 👀 ES5 주요 특징들
 
-- [strict mode](#strict-mode)
+- ['use strict'](#use-strict)
 - [String.trim()](#stringtrim)
 - [Array.isArray()](#arrayisarray)
 - [Array.forEach()](#arrayforeach)
@@ -132,6 +132,8 @@ with (Math) {
 console.log(x);
 ```
 
+[목록으로](#-es5-주요-특징들)
+
 ### string.trim()
 
 양 끝에서 공백을 제거한 새로운 문자열을 반환합니다.  
@@ -146,6 +148,8 @@ var a = " 누가 이렇게 저장을 해 "
 console.log(a.trim()) // "누가 이렇게 저장을 해"
 console.log(a) // " 누가 이렇게 저장을 해 "
 ```
+
+[목록으로](#-es5-주요-특징들)
 
 ### Array.isArray()
 
@@ -168,6 +172,8 @@ console.log(Array.isArray(proto)); // true
 console.log(Array.isArray(b));  // false
 console.log(Array.isArray(c)); // false
 ```
+
+[목록으로](#-es5-주요-특징들)
 
 ### Array.forEach()
 
@@ -238,7 +244,11 @@ console.log(count); // 1
 이건 사용 가능한 방법이긴 하지만,  
 `every`와 `some`의 사용 취지와 맞지 않는 것 같아 저는 크게 와닿진 않았습니다.
 
+[목록으로](#-es5-주요-특징들)
+
 ### Array.map()
+
+[목록으로](#-es5-주요-특징들)
 
 ## 참고 문서 및 블로그
 
