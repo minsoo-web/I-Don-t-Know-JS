@@ -22,7 +22,7 @@ _[사진 출처](https://paperblock.tistory.com/67)_
 - [Array.isArray()](#arrayisarray)
 - [Array.forEach()](#arrayforeach)
 - [Array.map()](#arraymap)
-- Array.filter()
+- [Array.filter()](#arrayfilter)
 - Array.reduce()
 - Array.reduceRight()
 - Array.every()
@@ -247,6 +247,61 @@ console.log(count); // 1
 [목록으로](#-es5-주요-특징들)
 
 ### Array.map()
+
+배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 _결과를 모아서_  
+*새로운 배열을 반환*하는 메소드 입니다.
+
+```JavaScript
+Array.prototype.map(callbackfn: (
+    value: any,
+    index: number,
+    array: any[]
+)=>any,thisArg?:any): any[]
+
+```
+
+`forEach()` 메서드와 유사하지만
+
+- 반환값이 있다는 점
+- 그 반환 값이 `callback`의 결과들을 모은 배열이라는 점
+
+위 두가지가 큰 차이 점입니다.
+
+⚠️ 이에 따라 한가지 유의하셔야 할 점이 있습니다.  
+`callback` 의 결과들을 모은 배열을 반환하기 때문에 `callback` 내에서 `return` 을 해주어야 합니다.
+
+[목록으로](#-es5-주요-특징들)
+
+### Array.filter()
+
+알고리즘 문제를 풀다보면 자주 쓰이는 메소드 중 하나입니다.  
+주어진 함수의 _테스트를_ 통과하는 모든 요소를 모아 _새로운 배열로_ 반환합니다.
+
+```JavaScript
+Array.prototype.filter(callback:(
+    value: any,
+    index: number,
+    array: any[],
+) => meet the condition value , thisArg?: any): any[]
+```
+
+⚠️ `filter()` 는 호출되는 배열을 변화시키지(mutate) 않습니다.
+
+#### 예제
+
+```JavaScript
+function isOdd(value){
+    return (value % 2 ) == 1
+}
+
+// 셋 다 같은 결과 [1, 3, 5]
+var filtered1 = [1, 2, 3, 4, 5].filter(isOdd);
+var filtered2 = [1, 2, 3, 4, 5].filter(number => isOdd(number));
+var filtered3 = [1, 2, 3, 4, 5].filter(number => {
+    return isOdd(number);
+});
+
+```
 
 [목록으로](#-es5-주요-특징들)
 
