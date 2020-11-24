@@ -23,9 +23,9 @@ _[사진 출처](https://paperblock.tistory.com/67)_
 - [Array.forEach()](#arrayforeach)
 - [Array.map()](#arraymap)
 - [Array.filter()](#arrayfilter)
-- Array.reduce()
-- Array.reduceRight()
-- Array.every()
+- [Array.reduce()](#arrayreduce)
+- [Array.reduceRight()](#arrayreduceright)
+- [Array.every()](#arrayevery)
 - Array.some()
 - Array.indexOf()
 - Array.lastIndexOf()
@@ -155,6 +155,8 @@ console.log(a) // " 누가 이렇게 저장을 해 "
 
 이 메서드는 전달받은 인자가 Array인지 판별합니다.
 
+#### 🏄‍♂️ Array.isArray() 예제
+
 ```Javascript
 // Array.isArray(obj: Object): boolean
 
@@ -192,6 +194,8 @@ Array.prototype.forEach(
 #### 1. thisArg
 
 callback 을 실행할 때 `this`로 사용할 값입니다.
+
+##### 🏄‍♂️ thisArg 예제
 
 ```JavaScript
 function Counter() {
@@ -287,7 +291,7 @@ Array.prototype.filter(callback:(
 
 ⚠️ `filter()` 는 호출되는 배열을 변화시키지(mutate) 않습니다.
 
-#### 예제
+#### Array.filter() 🏄‍♂️ 예제
 
 ```JavaScript
 function isOdd(value){
@@ -302,6 +306,124 @@ var filtered3 = [1, 2, 3, 4, 5].filter(number => {
 });
 
 ```
+
+[목록으로](#-es5-주요-특징들)
+
+### Array.reduce()
+
+> 👨🏼‍⚖️ MDN:  
+> 배열의 각 요소에 대해 주어진 _리듀서_(reducer) 함수를 실행하고,  
+> _하나의_ 결과값을 반환하는 메소드입니다.
+
+```JavaScript
+Array.prototype.reduce(callbackfn:( // 콜백함수 (reducer)
+    previousValue: any, // 누산기 (accumulator) 콜백의 반환 값을 누적
+    currentValue: any, // 처리할 현재 요소
+    currentIndex: number, // 처리할 현재 요소의 index
+    array: any[] // reduce 메소드를 호출한 배열
+) => any, initValue: any): any // initValue: callback 첫번째 호출에서 첫 번째 인수에 제공하는값, 없을 시 배열의 첫번째 요소를 사용
+
+```
+
+제가 이해한 reduce 메소드는  
+반환 값이 없는 forEach 에게 반환 값을 부여해 주고,
+초기값을 지정할 수 없는 forEach 에게 초기값을 부여해 줄 수 있는 메소드라고 이해했습니다.
+
+다시 말하면 reduce 메소드는 forEach로 쓰게 되면 여러 줄이 될 코드를  
+간결하고 편하게 사용할 수 있게 된 느낌으로 받아들여졌습니다.
+
+#### Array.reduce() 🏄‍♂️ 예제
+
+reduce 검색하면 제일 먼저 나오는 가산기 예제 입니다.
+
+```JavaScript
+
+var result =[1,2,3,4].reduce(function(acc,cur){
+    return acc + cur;
+}, 0)
+
+console.log(result); // 10
+
+```
+
+forEach로 구현해보겠습니다.
+
+```JavaScript
+var result = 0;
+
+[1,2,3,4].forEach(function(el){
+    result+=el;
+})
+
+console.log(result); // 10
+
+```
+
+reduce 메소드는 반환 값과 초깃값 설정이 있어 한줄 코딩이 가능하다는 점이  
+강점인 것 같습니다.
+
+> ⚠️ reduce 메소드에서 첫번째 배열의 요소를 `initValue` 로 사용하시더라도  
+> `initValue` 를 명시적으로 적어주는 것이 좋습니다.
+
+[목록으로](#-es5-주요-특징들)
+
+### Array.reduceRight()
+
+> 👨🏼‍⚖️ 내 피셜:  
+> reduce 메소드 진행 방향이 왼 -> 오가 아닌  
+> 왼 <- 오 로 바뀐 메소드
+
+배열에 관한 메소드 진행시 역순으로 실행시키고 싶다면 ~~사용을 고려해봄직한~~
+
+⚠️ 폴리필
+
+reduceRight는 5 판에서 ECMA-262 표준에 추가되었습니다.  
+표준의 모든 구현에 존재하지 않을 수도 있습니다.
+
+MDN의 문서를 참조하여 스크립트 시작 부분에 코드를 삽입하여 사용에 문제가 없도록 하셔야 합니다.
+
+<https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight#폴리필>
+
+[목록으로](#-es5-주요-특징들)
+
+### Array.every()
+
+> 👨🏼‍⚖️ MDN:  
+> 배열 안의 모든 요소가 주어진 판별 함수를 통과하는지 테스트하는 메소드
+
+```JavaScript
+Array.prototype.every(predicate: (
+    value: any,
+    index: number,
+    array: any[]
+) => boolean, thisArg): boolean
+```
+
+⚠️ Attention ⚠️
+
+- `every` 는 호출한 배열을 변형하지 않습니다.
+- `every` 호출 이후로 배열에 추가하는 요소는 `callback` 이 방문하지 않습니다.
+- 배열에 원래 있었지만 아직 방문하지 않은 요소가 `callback` 에 의해 변형된 경우, 그 인덱스를 방문하는 시점의 값을 사용합니다.
+- 삭제한 요소는 방문하지 않습니다.
+
+#### 🏄‍♂️ Array.even() 예제
+
+```JavaScript
+function isEvenArr (element){
+    return element % 2 == 0;
+}
+
+var result1 = [0, 2, 4].every(isEvenArr);
+var result2 = [0, 2, 5].every(isEvenArr);
+
+console.log(result1); // true
+console.log(result2); // false
+
+```
+
+⚠️ 폴리필
+
+<https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/every#폴리필>
 
 [목록으로](#-es5-주요-특징들)
 
