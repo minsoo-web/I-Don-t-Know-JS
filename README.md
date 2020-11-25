@@ -12,6 +12,6 @@ ES5 ~ ES2020 까지 정리하는 게 목표입니다.
 
 ## 🗂 목차
 
-- [ES5 (미완)](https://github.com/Minsoo-web/es_features/tree/master/es5)
+- [ES5](https://github.com/Minsoo-web/es_features/tree/master/es5)
 - ES6 (예정)
 - ES7 (예정)
