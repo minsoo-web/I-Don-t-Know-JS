@@ -26,12 +26,12 @@ _[사진 출처](https://paperblock.tistory.com/67)_
 - [Array.reduce()](#arrayreduce)
 - [Array.reduceRight()](#arrayreduceright)
 - [Array.every()](#arrayevery)
-- Array.some()
-- Array.indexOf()
-- Array.lastIndexOf()
-- JSON.parse()
-- JSON.stringify()
-- Date.now()
+- [Array.some()](#arraysome)
+- [Array.indexOf()](#arrayindexof)
+- [Array.lastIndexOf()](#arraylastindexof)
+- [JSON.parse()](#jsonparse)
+- [JSON.stringify()](#jsonstringify)
+- [Date.now()](#datenow)
 
 ### 'use strict'
 
@@ -422,6 +422,242 @@ console.log(result2); // false
 ⚠️ 폴리필
 
 <https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/every#폴리필>
+
+[목록으로](#-es5-주요-특징들)
+
+### Array.some()
+
+> 👨🏼‍⚖️ MDN:  
+> 배열 안의 어떤 요소라도 주어진 판별 함수를 통과하는지 테스트하는 메소드입니다.
+
+`every` 메소드가 말 그대로 _모두_ 통과해야 `true` 를 반환하는 메소드였다면,  
+`some` 메소드는 _어느 한 요소라도_ 통과하면 `true` 를 반환하는 메소드입니다.
+
+```JavaScript
+Array.prototype.some(predicate: (
+    value: any,
+    index: number,
+    array: any[]
+)=> unknown, thisArg ?: any): boolean
+```
+
+#### 🏄‍♂️ Array.some() 예제
+
+```JavaScript
+function isEvenNumber(unknown_number) {
+    return unknown_number % 2 == 0;
+}
+
+[1, 2, 3].some(isEvenNumber); // true
+[1, 2, 3].every(isEvenNumber); // true
+
+```
+
+> ⚠️ 빈 배열을 호출하면 무조건 `false` 를 반환합니다.  
+> `some` 은 호출한 배열을 변형하지 않습니다.
+
+[목록으로](#-es5-주요-특징들)
+
+### Array.indexOf()
+
+> 👨🏼‍⚖️ MDN:  
+> 배열에서 _지정된 요소를 찾을 수 있는_  
+> **첫번째 인덱스**를 반환하고  
+> 존재하지 않으면 `-1` 을 반환합니다.
+
+알고리즘 문제를 풀다보면 자주 쓰이는 메소드 중 하나입니다.
+
+```JavaScript
+Array.prototype.indexOf(searchElement: any, fromIndex?: number): number
+```
+
+#### 🏄‍♂️ Array.indexOf() 예제
+
+```JavaScript
+var myArr = ["난", "여깄지", "의미", "없는", "문자", "어딨을까", "여깄지"];
+
+myArr.indexOf("여깄지"); // 1
+myArr.indexOf("여깄지", 2); // 6
+```
+
+`fromIndex` 는 옵션입니다.  
+`indexOf` 메소드가 가장 먼저 찾은 첫번째 인덱스를 반환한다는 점에서 유용하게 쓰일 수 있습니다.
+
+> ⚠️ `fromIndex`가 배열의 길이보다 크거나 같은 경우  
+> -1 이 반환되어 검색이 되지 않습니다.  
+> 음수를 제공하게 되면 역순으로 검색하게 됩니다.
+
+[목록으로](#-es5-주요-특징들)
+
+### Array.lastIndexOf()
+
+> 👨🏼‍⚖️ 배열에서 주어진 값을 발견할 수 있는 마지막 인덱스를 반환하고,  
+> 요소가 존재하지 않으면 -1 을 반환합니다.  
+> 배열 탐색은 `fromIndex` 에서 시작하여 뒤로 진행합니다.
+
+`indexOf` 메소드와 진행 방향이 다른 것 빼고는 모두 일치합니다.  
+다만, `fromIndex`에 음수를 제공해도 진행순서는 뒤에서 앞이며,  
+배열의 길이보다 큰 값으로 주게되면 전체 검색을 하게 되지만,  
+`배열의 길이 + fromIndex` 의 값이 0보다 작은 값이라면 **-1** 을 반환합니다.
+
+```JavaScript
+Array.prototype.lastIndexOf(searchElement: any, fromIndex: number): number
+```
+
+#### 🏄‍♂️ Array.lastIndexOf() 예제
+
+```JavaScript
+var myArr = [1, 2, 3, 4, 5, 1];
+
+myArr.lastIndexOf(1); // 5
+myArr.lastIndexOf(1, 3); // 오 -> 왼: 0
+myArr.lastIndexOf(1, -1); // 왼 -> 오: 0
+myArr.lastIndexOf(1, -7); // -1
+```
+
+[목록으로](#-es5-주요-특징들)
+
+### JSON.parse()
+
+> 👨🏼‍⚖️ MDN:  
+> JSON 문자열의 구문을 분석하고, 그 결과에서 JavaScript 값이나 객체를 생성합니다.  
+> 선택적으로, `reviver` 함수를 인수로 전달할 경우, 결과를 반환하기 전에 변형할 수 있습니다.
+
+```JavaScript
+JSON.parse(text: string, reviver?: (
+    key: string,
+    value: any
+) => any): any
+
+```
+
+#### 🏄‍♂️ JSON.parse() 예제
+
+```JavaScript
+JSON.parse('{"key":"1"}') // { key: '1' }
+JSON.parse("{'key':'1'}") // SyntaxError: Unexpected token '
+
+// ⚠️ 후행 쉼표 사용 불가
+JSON.parse('[1, 2, 3, 4, ]'); // SyntaxError
+JSON.parse('{"foo" : 1, }'); // SyntaxError
+```
+
+#### reviver 매개변수 사용하기
+
+`reviver` 가 주어지면 분석한 값을 반환하기 전에 **변환**합니다.
+
+```JavaScript
+JSON.parse('{"p": 5}', function (key, value) {
+    if(typeof value === 'number') {
+        return value * 2; // 숫자라면 2배
+    }else{
+        return value; // 나머진 그대로
+    }
+});
+
+// { p : 10 }
+```
+
+[목록으로](#-es5-주요-특징들)
+
+### JSON.stringify()
+
+> 👨🏼‍⚖️ MDN:  
+> JavaScript 값이나 객체를 JSON **문자열로** 변환합니다.  
+> 선택적으로, `replacer` 함수를 전달할 경우 변환 전 값을 변형할 수 있고,  
+> 배열로 전달할 경우 지정한 속성만 결과에 포함합니다.
+
+```JavaScript
+JSON.stringify(value: any, replacer?:(
+    key: string,
+    value: any
+)=> any, space?: string | number): string
+```
+
+`value`: JSON 문자열로 변환할 값,
+`replacer`:  
+문자열화 동작 방식을 변경하는 함수, 혹은 JSON 문자열에 포함될 값 객체의 속성들을  
+선택하기 위한 화이트리스트로 쓰이는 `String`과 `Number` 객체들의 배열  
+이 값이 null 이거나 제공되지 않으면, 객체의 모든 속성들이 문자열로 포함된다.
+`space`:  
+가독성을 목적으로 JSON 문자열 출력에 공백을 삽입하는데 사용되는 `String` 또는 `Number` 객체  
+`Number`일 경우 사용되는 스페이스(Space)의 수를 나타낸다. (_10이 최대_)  
+1보다 작은 값은 스페이스가 사용되지 않는 것을 나타낸다.  
+`String`일 경우 그 문자열(만약 길이가 10보다 길다면 첫번째 10개의 문자)이 공백으로 사용된다.  
+이 값이 null 이거나 제공되지 않으면, 공백이 사용되지 않는다.
+
+#### 🏄‍♂️ JSON.stringify() 예제
+
+```JavaScript
+JSON.stringify(new Date("2020-11-24"))
+// "2020-11-24T00:00:00.000Z"
+JSON.stringify({ x : 5 }) // {"x":5}
+```
+
+#### replacer
+
+```JavaScript
+// string type 은 변환하지 않겠다는 의지
+function replacer(key, value){
+    if (typeof value === "string"){
+        return undefined;
+    }
+    return value;
+}
+
+var foo = {
+    foundation: "Mozilla",
+    model: "box",
+    week: 45,
+    transport: "car",
+    month: 7
+}
+
+JSON.stringify(foo, replacer) // {"week":45,"month":7}
+// 배열의 경우, 배열안의 요소만을 속성으로 변환합니다.
+JSON.stringify(foo, ['week', 'month']) // {"week":45,"month":7}
+```
+
+#### space
+
+`space` 매개변수는 최종 문자열의 간격을 제어합니다.  
+'\t' 을 사용하면 일반적으로 들여쓰기 된 코드스타일과 유사합니다.
+
+```JavaScript
+/*
+{
+ "a": 2
+}
+*/
+JSON.stringify({ a: 2 }, null, 1);
+JSON.stringify({ a: 2 }, null, " ");
+
+/*
+{
+          "a": 2
+}
+*/
+JSON.stringify({ a: 2 }, null, 10);
+
+/*
+{
+        "a": 2 // 일반적이지 않은 것 같은데요...
+}
+*/
+JSON.stringify({ a: 2 }, null, "\t");
+```
+
+[목록으로](#-es5-주요-특징들)
+
+### Date.now()
+
+> 👨🏼‍⚖️ MDN:  
+> UTC 기준으로 1970년 1월 1일 0시 0분 0초부터 현재까지 경과된  
+> 밀리 초를 반환합니다.
+
+#### ⚠️ 폴리필
+
+<https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/now#Polyfill>
 
 [목록으로](#-es5-주요-특징들)
 
