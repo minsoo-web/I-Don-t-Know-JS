@@ -18,3 +18,85 @@
 
 ## 🚀 Intro
 
+ES6는 ECMAScript가 2015년에 발표한 표준 자바스크립트 6번째 에디션입니다.  
+ES7, 8 등등 많은 버전들이 있지만 ES6를 제일 많이 들어보셨을겁니다.  
+그 이유는 ES5에서의 JS 문법과 ES6가 도입된 JS 문법은 너무 많은 차이가 있기 때문입니다.
+
+<p align="center">
+    <img width="380"  alt="ECMAscript" src="../images/es6/poo.jpg" />
+</p>
+
+> Class,,, ()=> WTF
+
+남의 코드를 읽기 위해서라도,  
+자신의 코드를 더 가독성있고 짧고 편리하게 쓰기 위해서라도  
+ES6의 문법은 꼭 익히고 가야한다고 생각합니다.
+
+🎬 그럼 시작해보겠습니다.
+
+> 🤦 정리할 게 많은 것 같아 테마 별로 나누어 봤습니다
+
+## 👀 ES6 주요 특징들
+
+### Variables
+
+- let and const
+- Block Scope
+
+### Functions
+
+- Arrow Functions
+- this
+- Default Values
+- Rest Parameters
+
+### Arrays
+
+- for of
+- Array.find()
+- Array.findIndex()
+- Array.from()
+- Array.of()
+- Array.fill()
+
+### Class
+
+- Class
+
+### Module
+
+- Module
+
+### Promise
+
+- Fetch
+- Promise
+- async-await
+
+### Symbol, Set, Map
+
+- Symbol
+- Set
+- Map
+
+### Iterator, Generator
+
+- Iterator
+- Generator
+
+### Destructuring Assingment
+
+- Object Destructuring
+- Array Destructuring
+- Function Destructuring
+- Swapping and Skipping
+
+### etc
+
+- Template literals
+- Spread Operator
+
+## 참고 문서 및 블로그
+
+커리큘럼 참고: <https://nomadcoders.co/es6-once-and-for-all>
+참고 문서: <https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference>
