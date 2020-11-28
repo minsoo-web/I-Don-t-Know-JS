@@ -127,6 +127,6 @@ $$.y(); // 10
 
 ## 참고 문헌
 
-[zeroCho님 블로그](https://www.zerocho.com/category/Javascript/post/5740531574288ebc5f2ba97e)
-[빵속에꼼팡이님 블로그](https://soungnote.tistory.com/18)
+[zeroCho님 블로그](https://www.zerocho.com/category/Javascript/post/5740531574288ebc5f2ba97e)  
+[빵속에꼼팡이님 블로그](https://soungnote.tistory.com/18)  
 [poiemaweb.com](https://poiemaweb.com/js-execution-context)
