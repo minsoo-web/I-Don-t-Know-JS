@@ -12,7 +12,7 @@
     <image alt="var" src="../../images/es6/es6_var.jpg">
 </p>
 
-> var 는 더이상은 naver,,,
+> var 는 더이상 naver,,,
 
 기존에 c++ 이나 java 와 같은 정적타입의 언어를 공부하시던 분들은 JS 를 공부하실때  
 처음 느끼는 낯선 점이 바로 `var` 일 것입니다. 🤦
