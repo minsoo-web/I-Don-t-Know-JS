@@ -1,7 +1,7 @@
 <h1 align="center">JS 이론들</h1>
 
 <p align="center">
-    <img alt="scope" src="../images/etc/dev_duck.png" width="600">
+    <img alt="scope" src="../images/etc/dev_duck.png" width="300" height="300">
 </p>
 
 _[사진 출처](https://swag.devrant.com/products/devducks-js-javascript-rubber-duck)_
