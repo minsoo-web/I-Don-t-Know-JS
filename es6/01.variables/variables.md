@@ -2,7 +2,7 @@
 
 ## 📖 index
 
-- [let and const](#letandconst)
+- [let and const](#let-and-const)
 
 ### let and const
 
@@ -169,7 +169,7 @@ function count() {
 count(); // 0 ~ 9 출력
 ```
 
-[ES6 목록으로 가기](https://github.com/Minsoo-web/es_features/blob/master/es6/README.md#-es6-%EC%A3%BC%EC%9A%94-%ED%8A%B9%EC%A7%95%EB%93%A4)
+[ES6 목록으로 가기](https://github.com/Minsoo-web/es_features/blob/master/es6/README.md#-es5-주요-특징들)
 
 ## 참고 문서
 
