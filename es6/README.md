@@ -41,7 +41,6 @@ ES6의 문법은 꼭 익히고 가야한다고 생각합니다.
 ### Variables
 
 - let and const
-- Block Scope
 
 ### Functions
 
