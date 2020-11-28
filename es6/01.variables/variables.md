@@ -96,7 +96,7 @@ console.log(y); // Error! y가 뭔데!
 - let과 const는 `Hoisting`이 되지 않는다.
 - let을 통해 closure 이슈를 해결할 수 있다.
 
-[Hoisting?](https://github.com/Minsoo-web/es_features/blob/master/etc/execution_context.md#12-변수-객체화-실행-feat-hoisting)  
+[Hoisting?](https://github.com/Minsoo-web/es_features/blob/master/etc/execution_context.md)  
 [Closure?](https://github.com/Minsoo-web/es_features/blob/master/etc/closure.md)
 
 #### 🏄‍♂️ 예제
