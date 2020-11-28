@@ -97,7 +97,7 @@ Variable Object 는 아래와 같은 정보들을 담습니다.
 이와 같이 순차적으로 스코프 체인에서 변수를 검색하는데 결국 검색에 실패하면 정의되지 않은 변수에 접근하는 것으로 판단하여 `Reference` 에러를 발생시키게 되는 것입니다.  
 스코프 체인은 함수의 built in 프로퍼티인 `[[Scope]]` 로 참조할 수 있습니다.
 
-![scope](../images/etc/scope/scope.png)
+![scope](../images/etc/execution_context/ec_scope_chain.png)
 
 #### this
 
@@ -137,7 +137,7 @@ Variable Instantiation(변수 객체화) 는 아래의 순서로 값을 Set 합�
 
 따라서 함수 표현식을 통해 함수를 정의하게 될 경우에는 호이스팅이 적용되지 않습니다. 표현식의 경우 일반 변수의 방식을 따르기 때문에 **변수명**이 프로퍼티로 **undefined**가 값으로 설정됩니다.
 
-![scope_hoisting](../images/etc/scope/scope_hoisting.png)
+![scope_hoisting](../images/etc/execution_context/ec_hoisting.png)
 
 #### 1.2.1 변수 name의 선언처리
 
