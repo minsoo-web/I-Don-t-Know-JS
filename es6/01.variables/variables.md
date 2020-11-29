@@ -96,9 +96,6 @@ console.log(y); // Error! y가 뭔데!
 - let과 const는 `Hoisting`이 되지 않는다.
 - let을 통해 closure 이슈를 해결할 수 있다.
 
-[Hoisting?](https://github.com/Minsoo-web/es_features/blob/master/etc/execution_context.md)  
-[Closure?](https://github.com/Minsoo-web/es_features/blob/master/etc/closure.md)
-
 #### 🏄‍♂️ 예제
 
 ##### let 의 중복선언
@@ -126,6 +123,8 @@ y=1;
 
 ##### Hoisting
 
+[Hoisting?](https://github.com/Minsoo-web/es_features/blob/master/etc/execution_context.md)
+
 ```JavaScript
 // x 가 뭔데
 console.log(x); // ReferenceError: Cannot access 'x' before initialization
@@ -140,6 +139,8 @@ const PI = 3.14;
 
 ##### let을 통한 Closure 이슈 해결
 
+[Closure?](https://github.com/Minsoo-web/es_features/blob/master/etc/closure.md)
+
 ```JavaScript
 function count() {
     for (var i = 0; i < 10; i++) {
@@ -151,6 +152,23 @@ function count() {
 
 count(); // 10만 열번 출력
 
+```
+
+var 를 유지하면서 원하는 결과값을 출력하기 위해서는 추가적인 closure를 더 만들어줘야 했습니다.
+
+```JavaScript
+function count() {
+    function makeConsoleLog(num) {
+        setTimeout(() => {
+            console.log(num);
+        }, 1000);
+    }
+
+    for (var i = 0; i < 10; i++) {
+        makeConsoleLog(i); // 서로 다른 환경이 생성되면서 i 가 원하는 방식대로 출력됩니다.
+    }
+}
+count(); // 0 ~ 9
 ```
 
 위 코드에서 var 키워드를 let으로 변경하면  
