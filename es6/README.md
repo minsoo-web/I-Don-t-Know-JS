@@ -44,10 +44,10 @@ ES6의 문법은 꼭 익히고 가야한다고 생각합니다.
 
 ### Functions
 
-- Arrow Functions
-- this
-- Default Values
-- Rest Parameters
+- [Arrow Functions](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/01.arrow_function.md)
+- [this](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/02.this.md)
+- [Default Values](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/03.default_values.md)
+- [Rest Parameters](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/04.rest_parameters.md)
 
 ### Arrays
 
