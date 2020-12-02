@@ -42,6 +42,8 @@
 - [JSON.parse()](#jsonparse)
 - [JSON.stringify()](#jsonstringify)
 - [Date.now()](#datenow)
+- [Function.bind()][#functionprototypebind]
+- [call 과 apply][#call-apply]
 
 ### 'use strict'
 
@@ -671,8 +673,149 @@ JSON.stringify({ a: 2 }, null, "\t");
 
 [목록으로](#-es5-주요-특징들)
 
+### Function.prototype.bind()
+
+> 👨🏼‍⚖️ MDN:  
+> `bind()` 메소드가 호출되면 새로운 함수를 생성합니다.  
+> 받게되는 첫 인자의 value로는 this 키워드를 설정하고,  
+> 이어지는 인자들은 바인드된 함수의 인수에 제공됩니다.
+
+```JavaScript
+Function.prototype.bind(thisArg: any, ...argArray: any[]): any
+
+```
+
+`thisArg`:  
+바인딩 함수가 대상 함수의 this에 전달하는 값입니다.  
+바인딩 함수를 `new` 연산자로 생성한 경우 무시됩니다.
+
+반환값:  
+지정한 this 값 및 초기 인수를 사용하여 변경한 원본 함수의 복제본
+
+#### 🏄‍♂️ bind 예제
+
+```JavaScript
+this.x = 9;
+// 노드 환경 global.x = 9 와 같습니다.
+// 브라우저 window.x = 9
+const myModule = {
+    x: 43,
+    getX: function (){
+        return this.x;
+    }
+}
+
+const unboundedGetX = myModule.getX;
+console.log(unboundedGetX()); // 9
+// 함수가 전역 스코프에서 호출되었기 때문에
+
+// myModule과 바인딩된 `this`가 있는 새로운 함수 생성
+const boundedGetX = unboundedGetX.bind(myModule);
+console.log(boundedGetX()); // 43
+
+```
+
+[목록으로](#-es5-주요-특징들)
+
+### call, apply
+
+> 👨🏼‍⚖️ MDN:  
+> `call()` 메소드는 주어진 `this` 값 및 각각 전달된 인수와 함께 함수를 호출합니다.
+
+```txt
+⚠️ 이 메소드는 `apply()` 와 거의 동일하지만,
+`call()` 은 **인수 목록**을, 반면에 `apply()` 는 **인수 배열 하나**를 받는다는 점이 중요한 차이점입니다.
+```
+
+```JavaScript
+Function.prototype.call(thisArg: any, ...argArray: any[]): any
+```
+
+`thisArg`:  
+call을 호출한 함수에 제공되는 `this`의 값
+
+#### 🏄‍♂️ call, apply 예시
+
+함수의 **arguments**  
+함수에 들어온 인자를 _유사 배열의_ 형식으로 반환합니다.
+
+```JavaScript
+function example(){
+    console.log(arguments);
+}
+
+example(1, 'string', true); // [1, 'string', true];
+```
+
+`arguments`는 유사 배열이기 때문에 `join` 과 같은 배열의 메소드는 사용할 수 없습니다.
+
+```JavaScript
+function example(){
+    console.log(arguments.join());
+}
+example(1, 'string', true); // TypeError: arguments.join is not a function
+```
+
+이런 경우 `call` 을 사용하면
+
+```JavaScript
+function example(){
+    console.log(Array.prototype.join.call(arguments));
+}
+
+example(1, 'string', true); // '1,string,true'
+
+```
+
+해결이 가능합니다.
+
+#### 생성자 함수로서 호출
+
+```JavaScript
+function Product(name, price) {
+    this.name = name;
+    this.price = price;
+}
+
+function Food(name, price) {
+    Product(name, price);
+    this.category = "food";
+}
+
+const myfood = new Food("cheese", 5);
+
+console.log(myfood); // Food { category: 'food'}
+
+```
+
+`this`는 호출되는 순간에 정해진다고 했던 것 같은데  
+왜 Food에 name과 price가 제대로 들어가지 않았을까?
+
+Product 함수 자체가 갖고있는 `this` 때문에 그렇습니다.  
+이를 해결하기 위한 방법 중 하나로 call을 사용해 봅시다.
+
+```JavaScript
+function Product(name, price) {
+    this.name = name;
+    this.price = price;
+}
+
+function Food(name, price) {
+    Product.call(this, name, price);
+    // Product.apply(this, [name, price]); apply는 인수 배열!
+    this.category = "food";
+}
+
+const myfood = new Food("cheese", 5);
+
+console.log(myfood); // Food { name: 'cheese', price: 5, category: 'food' }
+```
+
+[목록으로](#-es5-주요-특징들)
+
 ## 참고 문서 및 블로그
 
 ES5 참고 블로그: <https://k39335.tistory.com/81>  
 ES5 참고 문서: <https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference>  
-forEach Break 참고: <https://stackoverflow.com/questions/6260756/how-to-stop-javascript-foreach>
+forEach Break 참고: <https://stackoverflow.com/questions/6260756/how-to-stop-javascript-foreach>  
+call, apply, bind: <https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd>
