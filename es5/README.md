@@ -42,8 +42,8 @@
 - [JSON.parse()](#jsonparse)
 - [JSON.stringify()](#jsonstringify)
 - [Date.now()](#datenow)
-- [Function.bind()][#functionprototypebind]
-- [call 과 apply][#call-apply]
+- [Function.bind()](#functionprototypebind)
+- [call 과 apply](#call-apply)
 
 ### 'use strict'
 
