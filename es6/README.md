@@ -49,6 +49,7 @@ ES6의 문법은 꼭 익히고 가야한다고 생각합니다.
 - [Short Circuit Evaluation](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/03.short_circuit_evaluation.md)
 - [Parameters](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/04.parameters.md)
 - [메서드 정의](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/05.method_definitions.md)
+- [Getter Setter](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/06.getter_setter.md)
 
 ### Arrays
 
@@ -95,7 +96,7 @@ ES6의 문법은 꼭 익히고 가야한다고 생각합니다.
 
 - Template literals
 - Spread Operator
-- Enhanced Object property
+- [Enhanced Object property](https://github.com/Minsoo-web/es_features/blob/master/es6/etc/03.enhanced_object_property.md)
 
 ## 참고 문서 및 블로그
 
