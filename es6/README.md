@@ -50,6 +50,7 @@ ES6의 문법은 꼭 익히고 가야한다고 생각합니다.
 - [Parameters](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/04.parameters.md)
 - [Short Method Definition](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/05.short_method_definitions.md)
 - [Getter Setter](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/06.getter_setter.md)
+- [function\*](https://github.com/Minsoo-web/es_features/blob/master/es6/02.functions/07.generator.md)
 
 ### Arrays
 
