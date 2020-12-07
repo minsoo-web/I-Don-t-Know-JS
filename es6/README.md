@@ -54,7 +54,7 @@ ES6의 문법은 꼭 익히고 가야한다고 생각합니다.
 
 ### Arrays
 
-- for of
+- [for of](https://github.com/Minsoo-web/es_features/blob/master/es6/03.arrays/01.for_of.md)
 - Array.find()
 - Array.findIndex()
 - Array.from()
