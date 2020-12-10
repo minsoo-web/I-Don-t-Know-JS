@@ -56,8 +56,11 @@ ES6의 문법은 꼭 익히고 가야한다고 생각합니다.
 
 - [for of](https://github.com/Minsoo-web/es_features/blob/master/es6/03.arrays/01.for_of.md)
 - [Array - Find Serries](https://github.com/Minsoo-web/es_features/blob/master/es6/03.arrays/02.array_find.md)
-- Array.from()
-- Array.of()
+  - [Array - find](https://github.com/Minsoo-web/es_features/blob/master/es6/03.arrays/02.array_find.md#array-find)
+  - [Array - findIndex](https://github.com/Minsoo-web/es_features/blob/master/es6/03.arrays/02.array_find.md#array-findindex)
+- [Array - Make Array Instance](https://github.com/Minsoo-web/es_features/blob/master/es6/03.arrays/03.array_from_of.md)
+  - [Array from](https://github.com/Minsoo-web/es_features/blob/master/es6/03.arrays/03.array_from_of.md#array-from)
+  - [Array of](https://github.com/Minsoo-web/es_features/blob/master/es6/03.arrays/03.array_from_of.md#array-of)
 - Array.fill()
 
 ### Class
