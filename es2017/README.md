@@ -68,6 +68,10 @@ console.log(Object.values(my_obj)); // ['bar']
 console.log(Object.values('foo')); // ['f', 'o', 'o']
 ```
 
+### 문제로 풀어보기
+
+- [두 개 뽑아서 더하기](https://github.com/Minsoo-web/js_algorithm/blob/master/programmers/level_1/%EB%91%90_%EA%B0%9C_%EB%BD%91%EC%95%84%EC%84%9C_%EB%8D%94%ED%95%98%EA%B8%B0/description.md)
+
 [목록으로](#-es8-주요-특징들)
 
 ---
