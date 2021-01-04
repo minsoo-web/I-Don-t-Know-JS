@@ -9,10 +9,10 @@
 
 ES8는 ECMAScript가 2017년에 발표한 표준 자바스크립트 8번째 에디션입니다.
 
-## 👀 ES7 주요 특징들
+## 👀 ES8 주요 특징들
 
 - String padding
-- Object.values()
+- [Object.values()](#objectvalues)
 - Object.entries()
 - getOwnPropertyDescriptors()
   - In what way is this useful?
@@ -22,6 +22,14 @@ ES8는 ECMAScript가 2017년에 발표한 표준 자바스크립트 8번째 에�
   - A quick example
   - Multiple async functions in series
 - Shared Memory and Atomics
+
+---
+
+### Object.values()
+
+[목록으로](#-es8-주요-특징들)
+
+---
 
 ## 참고 문헌
 
